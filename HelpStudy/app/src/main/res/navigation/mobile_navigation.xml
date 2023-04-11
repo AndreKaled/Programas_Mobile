@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/navigation_home">
+    <fragment
+        android:id="@+id/conquistas"
+        android:name="com.example.helpstudy.Conquistas"
+        android:label="fragment_conquistas"
+        tools:layout="@layout/fragment_conquistas" />
+    <fragment
+        android:id="@+id/listas"
+        android:name="com.example.helpstudy.listas"
+        android:label="fragment_listas"
+        tools:layout="@layout/fragment_listas" >
+        <action
+            android:id="@+id/action_listas_to_cronometro"
+            app:destination="@id/cronometro" />
+    </fragment>
+    <fragment
+        android:id="@+id/cronometro"
+        android:name="com.example.helpstudy.cronometro"
+        android:label="fragment_cronometro"
+        tools:layout="@layout/fragment_cronometro" >
+        <action
+            android:id="@+id/action_cronometro_to_musicas"
+            app:destination="@id/musicas" />
+    </fragment>
+    <fragment
+        android:id="@+id/musicas"
+        android:name="com.example.helpstudy.musicas"
+        android:label="fragment_musicas"
+        tools:layout="@layout/fragment_musicas" >
+        <action
+            android:id="@+id/action_musicas_to_conquistas"
+            app:destination="@id/conquistas" />
+    </fragment>
+</navigation>
